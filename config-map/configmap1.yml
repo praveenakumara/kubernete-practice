@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dob
+data:
+  name: "praveenkumara  P Y"
+  DOB: "16-05-1994"
+  birth_place: "davanagere,mayakonda,parashurampura"
+  father_name: "venkyanaik"
+  mother_name: "sumitra bai"
+

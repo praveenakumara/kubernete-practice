@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shivnarayan
+  labels:
+    name: tomcat
+spec:
+  containers:
+  - name: tomcat
+    image: praveenakumara/mycat:v1
+    ports:
+    - containerPort: 8080
+    
+    volumeMounts:
+    - mountPath: /var/lib/tomcat
+      name: tomcat
+  volumes:
+  - name: tomcat
+    hostPath:
+      path: /data
+      type: DirectoryOrCreate

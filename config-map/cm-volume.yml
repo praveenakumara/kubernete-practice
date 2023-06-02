@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-cm-volume
+  labels:
+    name: project1
+spec:
+  containers:
+    - name: tomcat
+      image: praveenakumara/mycat:v1
+      volumeMounts:
+      - mountPath: /var/lib/tomcat
+        name: config-db
+  volumes:
+  - name: config-db
+    configMap:
+      name: tomcat-cm
+

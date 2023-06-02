@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shivnarayan
+  labels:
+    name: tomcat
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name: tomcat
+  template:
+    metadata:
+      labels:
+        name: tomcat
+    spec:
+      containers:
+      - name: tomcat
+        image: praveenakumara/mycat:v1
+        ports:
+        - containerPort: 80
